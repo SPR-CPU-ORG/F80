@@ -35,10 +35,9 @@ install() {
 
 if [ "$1" = "install" ]; then
   install
+   installP
   else
-if [ "$1" = "installpackages" ]; then
-  installP
-  else
+
 if [ ! -f ./TG/TeleCli ]; then
     echo "tg not found"
     echo "Run $0 install"
