@@ -1,18 +1,13 @@
-package.path = package.path .. ';.luarocks/share/lua/5.2/?.lua'
-  ..';.luarocks/share/lua/5.2/?/init.lua'
-package.cpath = package.cpath .. ';.luarocks/lib/lua/5.2/?.so'
-URL = require "socket.url"
-http = require "socket.http"
-https = require "ssl.https"
-ltn12 = require "ltn12"
-serpent = (loadfile "./Libs/serpent.lua")()
-feedparser = (loadfile "./Libs/feedparser.lua")()
-json = (loadfile "./Libs/JSON.lua")()
-mimetype = (loadfile "./Libs/mimetype.lua")()
-redis = (loadfile "./Libs/redis.lua")()
-R = (loadfile "./Libs/redis.lua")()
-JSON = (loadfile "./Libs/dkjson.lua")()
-http.TIMEOUT = 10
+https = require "ssl.https" 
+ltn12 = require "ltn12"	
+json = require "dkjson"
+serpent = require "serpent"
+URL = require 'socket.url'
+JSON = require 'dkjson'
+color = require 'term.colors' 
+redis_server = require('redis')
+redis = redis_server.connect('127.0.0.1', 6379)
+
 tdcli = dofile('tdcli.lua')
 -------------------------------
 Sudo = 0 -- Put Main Sudo ID Here (Bot Owner)
