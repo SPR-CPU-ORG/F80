@@ -8,7 +8,7 @@ color = require 'term.colors'
 redis_server = require('redis')
 redis = redis_server.connect('127.0.0.1', 6379)
 
-tdcli = dofile('tdcli.lua')
+tdcli = dofile('./Run/tdcli.lua')
 -------------------------------
 Sudo = 0 -- Put Main Sudo ID Here (Bot Owner)
 
