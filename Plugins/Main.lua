@@ -5709,6 +5709,7 @@ end
 				function PRE(data)
 					--vardump(data)
 					if data.ID == 'UpdateNewMessage' then
+						if data.message_ then
 						msg = data.message_
 						msg_id = (msg.id_ or msg.message_id_)
 						chat_id = msg.chat_id_
@@ -5873,7 +5874,7 @@ end
 						end
 					end
 					--
-
+					end
 					--return --true
 				end
 
