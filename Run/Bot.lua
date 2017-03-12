@@ -279,12 +279,13 @@ end
 --
 --
 function load_plugins()
+PLS = redis:smembers('Bot:Enable:Plugins')
   pl = {
   "Main",
   'Plugnis'
   }
-  table.insert(pl, redis:smembers('Bot:Enable:Plugins'))
-  for k, v in pairs(pl) do
+  table.insert(PLS, pl)
+  for k, v in pairs(PLS) do
     print("Loading "..v..' ...')
 
     local ok, err =  pcall(function()
