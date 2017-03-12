@@ -225,43 +225,9 @@ function edited_cb(extra, result, success)
   match_plugins(data, txt)
   --pre_process_msg(data)
 end
-  plugins = {}
-  load_plugins()
 
- function tdcli_update_callback(data)                 
-  pre_process_msg(data)
-    if data.ID == 'UpdateMessageEdited' then
-        getmsg(data.chat_id_, data.message_id_, edited_cb, nil)
-    end
 
-    if (data.ID == "UpdateNewMessage") then
-      local msg = data.message_
-      if msg.date_ < os.time() - 7 then
-         return 
-      end
-      getuser(data.message_.sender_user_id_, saveuser, nil)
-      local user__ = redis:hgetall('users:'..msg.sender_user_id_)
-      local username = user__.uname
-        if username then
-          redis:set('user:'..username, msg.sender_user_id_)
-        else
-
-        end
-
-      if msg.content_.ID == "MessageText" then
-        txt = msg.content_.text_
-        match_plugins(data, txt)
-      end
-
-      elseif (data.ID == "UpdateOption" and data.name_ == "my_id") then
-        tdcli_function ({
-        ID="GetChats",
-        offset_order_="9223372036854775807",
-        offset_chat_id_=0,
-        limit_=20
-        }, dl_cb, nil)
-      end
-end
+ 
 function dl_cb(arg, data)
   --vardump(arg)
   --vardump(data)
@@ -314,7 +280,8 @@ end
 --
 function load_plugins()
   pl = {
-  "Main"
+  "Main",
+  'Plugnis'
   }
   table.insert(pl, redis:smembers('Bot:Enable:Plugins'))
   for k, v in pairs(pl) do
@@ -334,6 +301,43 @@ function load_plugins()
   end
 end
 
+  plugins = {}
+  load_plugins()
+
+function tdcli_update_callback(data)                 
+  pre_process_msg(data)
+    if data.ID == 'UpdateMessageEdited' then
+        getmsg(data.chat_id_, data.message_id_, edited_cb, nil)
+    end
+
+    if (data.ID == "UpdateNewMessage") then
+      local msg = data.message_
+      if msg.date_ < os.time() - 7 then
+         return 
+      end
+      getuser(data.message_.sender_user_id_, saveuser, nil)
+      local user__ = redis:hgetall('users:'..msg.sender_user_id_)
+      local username = user__.uname
+        if username then
+          redis:set('user:'..username, msg.sender_user_id_)
+        else
+
+        end
+
+      if msg.content_.ID == "MessageText" then
+        txt = msg.content_.text_
+        match_plugins(data, txt)
+      end
+
+      elseif (data.ID == "UpdateOption" and data.name_ == "my_id") then
+        tdcli_function ({
+        ID="GetChats",
+        offset_order_="9223372036854775807",
+        offset_chat_id_=0,
+        limit_=20
+        }, dl_cb, nil)
+      end
+end
 
 --[[
 
