@@ -1591,7 +1591,7 @@ end
 					tdcli.downloadFile(result.user_.profile_photo_.big_.id_)
 					tdcli.getFilePersistent(result.user_.profile_photo_.big_.persistent_id_)
 					sleep(1)
-					sendPhoto(chat_id, extra.msg_id, 0, 1, nil, '/root/.telegram-cli/F802/data/profile_photo/'.. result.user_.profile_photo_.id_ ..'.jpg', text)
+					sendPhoto(chat_id, extra.msg_id, 0, 1, nil, msg.photo_.big_.path_, text)
 				end
 			GetUser(user_id, ID_CB, {chat_id=chat_id,msg_id=msg_id})
 			end
@@ -2394,7 +2394,7 @@ end
 					tdcli.downloadFile(result.user_.profile_photo_.big_.id_)
 					tdcli.getFilePersistent(result.user_.profile_photo_.big_.persistent_id_)
 					sleep(1)
-					sendPhoto(chat_id, extra.msg_id, 0, 1, nil, '/root/.telegram-cli/F802/data/profile_photo/'.. result.user_.profile_photo_.id_ ..'.jpg', text)
+					sendPhoto(chat_id, extra.msg_id, 0, 1, nil, msg.photo_.big_.path_, text)
 				end
 			GetUser(user_id, ID_CB, {chat_id=chat_id,msg_id=msg_id})
 			end
@@ -3186,7 +3186,7 @@ end
 										tdcli.downloadFile(result.user_.profile_photo_.big_.id_)
 										sleep(1)
 										tdcli.getFilePersistent(result.user_.profile_photo_.big_.persistent_id_)
-										sendPhoto(chat_id, extra.msg_id, 0, 1, nil, '/root/.telegram-cli/F802/data/profile_photo/'.. result.user_.profile_photo_.id_ ..'.jpg', text)
+										sendPhoto(chat_id, extra.msg_id, 0, 1, nil, msg.photo_.big_.path_, text)
 									end
 									GetUser(msg.sender_user_id_, ID_CB, {chat_id=chat_id,msg_id=msg_id})
 								elseif matches[2] then
@@ -4006,7 +4006,14 @@ end
 
 								if matches[1]:lower() == 'تنظیم زبان' and matches[2] and is_mod(msg) then
 									if matches[2]:lower() == 'لاتین' then
-										redis:set('lang:'..chat_id, 'en')
+										redis:set('lang:'..chat_
+					
+					
+					
+					
+					
+					
+					, 'en')
 										tdcli.sendText(chat_id, msg_id, 0, 1, nil, '*Language Setted To English*', 1, 'md')
 									elseif matches[2]:lower() == 'فارسی' then
 										redis:set('lang:'..chat_id, 'fa')
@@ -4101,65 +4108,7 @@ end
 								end
 								tdcli.sendText(chat_id, msg_id, 0, 1, nil, text, 1, 'md')
 							end
-							if matches[1]:lower() == 'config' and is_ex(msg) then
-								local path = '/root/BOT/Data/Temp/Group'..chat_id..'.lua'
-								local mods = ''
-								for v,k in pairs(redis:smembers('mods:'..chat_id)) do
-								 mods = mods..'\nredis:sadd("mods:'..chat_id..'",'..k..')'
-								end
-								local exs = ''
-								for v,k in pairs(redis:smembers('exadmins:'..chat_id)) do
-								 exs = exs..'\nredis:sadd("exadmins:'..chat_id..'",'..k..')'
-								end
-								local text = '--Group : '..chat_id..'  ExtraAdmin : '..user_id..'\n'
-										   ..'redis = (loadfile "/root/BOT/Libs/redis.lua")()'
-										   ..'redis:set("links:'..chat_id..'", "'.. (redis:get('links:'..chat_id) or 'ok')..'")\n'
-										   ..'redis:set("username:'..chat_id..'", "'.. (redis:get('username:'..chat_id) or 'ok')..'")\n'
-										   ..'redis:set("hashtag:'..chat_id..'", "'.. (redis:get('hashtag:'..chat_id) or 'ok')..'")\n'
-										   ..'redis:set("forward:'..chat_id..'", "'.. (redis:get('forward:'..chat_id) or 'ok')..'")\n'
-										   ..'redis:set("floood:'..chat_id..'", "'.. (redis:get('floood:'..chat_id) or 'ok')..'")\n'
-										   ..'redis:set("flood:'..chat_id..'", "'.. (redis:get('flood:'..chat_id) or 'ok')..'")\n'
-										   ..'redis:set("floodtime:'..chat_id..'", "'.. (redis:get('floodtime:'..chat_id) or 'ok')..'")\n'
-										   ..'redis:set("spam:'..chat_id..'", "'.. (redis:get('spam:'..chat_id) or 'ok')..'")\n'
-										   ..'redis:set("spamcharr:'..chat_id..'", "'.. (redis:get('spamcharr:'..chat_id) or 'ok')..'")\n'
-										   ..'redis:set("edit:'..chat_id..'", "'.. (redis:get('edit:'..chat_id) or 'ok')..'")\n'
-										   ..'redis:set("pin:'..chat_id..'", "'.. (redis:get('pin:'..chat_id) or 'ok')..'")\n'
-										   ..'redis:set("reply:'..chat_id..'", "'.. (redis:get('reply:'..chat_id) or 'ok')..'")\n'
-										   ..'redis:set("photo:'..chat_id..'", "'.. (redis:get('photo:'..chat_id) or 'ok')..'")\n'
-										   ..'redis:set("video:'..chat_id..'", "'.. (redis:get('video:'..chat_id) or 'ok')..'")\n'
-										   ..'redis:set("contact:'..chat_id..'", "'.. (redis:get('contact:'..chat_id) or 'ok')..'")\n'
-										   ..'redis:set("audio:'..chat_id..'", "'.. (redis:get('audio:'..chat_id) or 'ok')..'")\n'
-										   ..'redis:set("voice:'..chat_id..'", "'.. (redis:get('voice:'..chat_id) or 'ok')..'")\n'
-										   ..'redis:set("location:'..chat_id..'", "'.. (redis:get('location:'..chat_id) or 'ok')..'")\n'
-										   ..'redis:set("muteall:'..chat_id..'", "'.. (redis:get('muteall:'..chat_id) or 'ok')..'")\n'
-										   ..'redis:set("gif:'..chat_id..'", "'.. (redis:get('gif:'..chat_id) or 'ok')..'")\n'
-										   ..'redis:set("link:'..chat_id..'", "'.. (redis:get('link:'..chat_id) or 'NoLink')..'")\n'
-										   ..'redis:set("file:'..chat_id..'", "'.. (redis:get('file:'..chat_id) or 'ok')..'")\n'
-										   ..'redis:set("sticker:'..chat_id..'", "'.. (redis:get('sticker:'..chat_id) or 'ok')..'")\n'
-										   ..'redis:set("english:'..chat_id..'", "'.. (redis:get('english:'..chat_id) or 'ok')..'")\n'
-										   ..'redis:set("arabic:'..chat_id..'", "'.. (redis:get('arabic:'..chat_id) or 'ok')..'")\n'
-										   ..'redis:set("game:'..chat_id..'", "'.. (redis:get('game:'..chat_id) or 'ok')..'")\n'
-										   ..'redis:set("inline:'..chat_id..'", "'.. (redis:get('inline:'..chat_id) or 'ok')..'")\n'
-										   ..'redis:set("chat:'..chat_id..'", "'.. (redis:get('chat:'..chat_id) or 'ok')..'")\n'
-										   ..'redis:set("lang:'..chat_id..'", "'.. (redis:get('lang:'..chat_id) or 'ok')..'")\n'
-										   ..'redis:set("bots:'..chat_id..'", "'.. (redis:get('bots:'..chat_id) or 'ok')..'")\n'
-										   ..'redis:set("name:'..chat_id..'", "'.. (redis:get('name:'..chat_id) or 'ok')..'")\n'
-										   ..'redis:set("wlc:'..chat_id..'", "'.. (redis:get('wlc:'..chat_id) or 'ok')..'")\n'
-										   ..mods..'\n--MODS--\n'
-										   ..ex..'\n--exs--\n'
-								file = io.open(path, "w")
-								file:write(text)
-								file:flush()
-								file:close()
-								x = io.popen('luac /root/BOT/Data/Temp/Group'..chat_id..'.lua'):read('*all')
-								xp = io.popen('mv /root/BOT/luac.out /root/BOT/Data/Temp/Gps/Group'..chat_id..'.lua'):read('*all')
-								local send = ''
-								local text = ''
-								local token = ''
-								local caption = token..'\n@SPRCPU_Company'
-   					   			tdcli.sendDocument(chat_id, 0, 0, 0, nil, '/root/BOT/Data/Temp/Gps/Group'..chat_id..'.lua', caption)
-							end
-
+							
 							if matches[1]:lower() == 'چه کسی است' and is_mod(msg) then
 								local function getuserCB(extra, result, succses)
 									if result.ID == 'Error' then
@@ -4594,7 +4543,7 @@ end
 										tdcli.downloadFile(result.user_.profile_photo_.big_.id_)
 										sleep(1)
 										tdcli.getFilePersistent(result.user_.profile_photo_.big_.persistent_id_)
-										sendPhoto(chat_id, extra.msg_id, 0, 1, nil, '/root/.telegram-cli/F802/data/profile_photo/'.. result.user_.profile_photo_.id_ ..'.jpg', text)
+										sendPhoto(chat_id, extra.msg_id, 0, 1, nil, msg.photo_.big_.path_, text)
 									end
 									GetUser(msg.sender_user_id_, ID_CB, {chat_id=chat_id,msg_id=msg_id})
 								elseif matches[2] then
