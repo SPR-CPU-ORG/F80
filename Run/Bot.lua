@@ -279,13 +279,12 @@ end
 --
 --
 function load_plugins()
-PLS = redis:smembers('Bot:Enable:Plugins')
+  PLS = redis:smembers('Bot:Enable:Plugins')
   pl = {
   "Main",
   'Plugnis'
   }
-  table.insert(PLS, pl)
-  for k, v in pairs(PLS) do
+  for k, v in pairs(pl) do
     print("Loading "..v..' ...')
 
     local ok, err =  pcall(function()
@@ -300,6 +299,23 @@ PLS = redis:smembers('Bot:Enable:Plugins')
       print(v..' Loaded Succses.')
     end
   end
+	
+for k, v in pairs(PLS) do
+    print("Loading "..v..' ...')
+
+    local ok, err =  pcall(function()
+      local t = loadfile("Plugins/"..v..'.lua')()
+      plugins[v] = t
+    end)
+
+    if not ok then
+      print("Can't Load "..v.." Error Code = ")
+      print(tostring(io.popen("lua Plugins/"..v..".lua"):read('*all')))
+      elseif ok then
+      print(v..' Loaded Succses.')
+    end
+  end
+	
 end
 
   plugins = {}
