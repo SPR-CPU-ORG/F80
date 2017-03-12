@@ -282,7 +282,7 @@ function load_plugins()
   PLS = redis:smembers('Bot:Enable:Plugins')
   pl = {
   "Main",
-  'Plugnis'
+  'Plugin'
   }
   for k, v in pairs(pl) do
     print("Loading "..v..' ...')
