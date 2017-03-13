@@ -1591,7 +1591,7 @@ end
 					tdcli.downloadFile(result.user_.profile_photo_.big_.id_)
 					tdcli.getFilePersistent(result.user_.profile_photo_.big_.persistent_id_)
 					sleep(1)
-					sendPhoto(chat_id, extra.msg_id, 0, 1, nil, result.photo_.big_.path_, text)
+					sendPhoto(chat_id, extra.msg_id, 0, 1, nil, result.user_.profile_photo_.big_.path_, text)
 				end
 			GetUser(user_id, ID_CB, {chat_id=chat_id,msg_id=msg_id})
 			end
@@ -1990,7 +1990,7 @@ end
 				tdcli.downloadFile(result.user_.profile_photo_.big_.id_)
 				tdcli.getFilePersistent(result.user_.profile_photo_.big_.persistent_id_)
 				sleep(1)
-				sendPhoto(chat_id, extra.msg_id, 0, 1, nil, result.photo_.big_.path_, text)
+				sendPhoto(chat_id, extra.msg_id, 0, 1, nil, result.user_.profile_photo_.big_.path_, text)
 			end
 			--Promote_UserID
 			function Promote_ID(extra, result, succses)
@@ -2394,7 +2394,7 @@ end
 					tdcli.downloadFile(result.user_.profile_photo_.big_.id_)
 					tdcli.getFilePersistent(result.user_.profile_photo_.big_.persistent_id_)
 					sleep(1)
-					sendPhoto(chat_id, extra.msg_id, 0, 1, nil, result.photo_.big_.path_, text)
+					sendPhoto(chat_id, extra.msg_id, 0, 1, nil, result.user_.profile_photo_.big_.path_, text)
 				end
 			GetUser(user_id, ID_CB, {chat_id=chat_id,msg_id=msg_id})
 			end
@@ -3186,7 +3186,7 @@ end
 										tdcli.downloadFile(result.user_.profile_photo_.big_.id_)
 										sleep(1)
 										tdcli.getFilePersistent(result.user_.profile_photo_.big_.persistent_id_)
-										sendPhoto(chat_id, extra.msg_id, 0, 1, nil, result.photo_.big_.path_, text)
+										sendPhoto(chat_id, extra.msg_id, 0, 1, nil, result.user_.profile_photo_.big_.path_, text)
 									end
 									GetUser(msg.sender_user_id_, ID_CB, {chat_id=chat_id,msg_id=msg_id})
 								elseif matches[2] then
@@ -4543,7 +4543,7 @@ end
 										tdcli.downloadFile(result.user_.profile_photo_.big_.id_)
 										sleep(1)
 										tdcli.getFilePersistent(result.user_.profile_photo_.big_.persistent_id_)
-										sendPhoto(chat_id, extra.msg_id, 0, 1, nil, result.photo_.big_.path_, text)
+										sendPhoto(chat_id, extra.msg_id, 0, 1, nil, result.user_.profile_photo_.big_.path_, text)
 									end
 									GetUser(msg.sender_user_id_, ID_CB, {chat_id=chat_id,msg_id=msg_id})
 								elseif matches[2] then
