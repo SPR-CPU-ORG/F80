@@ -5739,6 +5739,19 @@ end
 								Check_Msg(msg, (msg.content_.text_ or msg.content_.caption_))
 							end
    						end
+   							if msg.forward_info_ then
+				    	      if R:get('forward:'..msg.chat_id_) == 'del' then
+				    	        tdcli.deleteMessages(msg.chat_id_, {[0] = msg.id_})
+				    	      elseif R:get('forward:'..msg.chat_id_) == 'kick' then
+				    	        tdcli.changeChatMemberStatus(msg.chat_id_, msg.sender_user_id_, 'Kicked')
+											tdcli.deleteMessages(msg.chat_id_, {[0] = msg.id_})
+				    	      elseif R:get('forward:'..msg.chat_id_) == 'report' then
+				    	        tdcli.reportChannelSpam(msg.chat_id_, msg.sender_user_id_, {[0] = msg.id_})
+				    	        tdcli.deleteMessagesFromUser(msg.chat_id_, msg.sender_user_id_)
+				    	      else
+				    	        return
+				    	      end
+				    	    end
     					if msg.reply_markup_ or  msg.content_.game_ or msg.content_.voice_ or msg.content_.audio_ or msg.content_.video_ or msg.content_.photo_ or msg.content_.animation_ or msg.content_.document_  or msg.content_.contact_ or msg.content_.sticker_ or msg.content_.text_ or msg.content_.location_ then
     						if not is_mod(msg) then
     						if msg.reply_markup_ and R:get('inline:'..chat_id) == 'Clean' then
@@ -5771,19 +5784,7 @@ end
     	   					if msg.content_.document_ and R:get('file:'..chat_id) == 'Clean' then
    					 	   		tdcli.deleteMessages(chat_id, {[0] = msg_id})
        	   				end
-						  if msg.forward_info_ then
-				    	      if R:get('forward:'..msg.chat_id_) == 'del' then
-				    	        tdcli.deleteMessages(msg.chat_id_, {[0] = msg.id_})
-				    	      elseif R:get('forward:'..msg.chat_id_) == 'kick' then
-				    	        tdcli.changeChatMemberStatus(msg.chat_id_, msg.sender_user_id_, 'Kicked')
-											tdcli.deleteMessages(msg.chat_id_, {[0] = msg.id_})
-				    	      elseif R:get('forward:'..msg.chat_id_) == 'report' then
-				    	        tdcli.reportChannelSpam(msg.chat_id_, msg.sender_user_id_, {[0] = msg.id_})
-				    	        tdcli.deleteMessagesFromUser(msg.chat_id_, msg.sender_user_id_)
-				    	      else
-				    	        return
-				    	      end
-				    	    end
+
 						  end
     						--
     					end
