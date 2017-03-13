@@ -76,9 +76,9 @@ function download_libs_lua() {
 }
 
 function update() {
-    git checkout launch.sh plugins/ lang/ bot/ libs/
+    git checkout Run.sh plugins/ lang/ bot/ libs/
     git pull
-    echo chmod +x launch.sh | /bin/bash
+    echo chmod +x Run.sh | /bin/bash
 }
 
 function configure() {
@@ -114,7 +114,7 @@ function configure() {
 }
 
 function start_bot() {
-    ./bin/telegram-cli -p F80Bot ./bot/bot.lua $@
+    ./bin/telegram-cli -p F80Bot ./Run/Bot.lua $@
 }
 
 function show_logo_slowly() {
@@ -151,7 +151,7 @@ case $1 in
     	exit ;;
     tmux)
     	if [ ! -f "/usr/bin/tmux" ]; then echo "Please install tmux"; exit; fi
-    	ok=`tmux new-session -s $TMUX_SESSION -d "./bin/telegram-cli -s ./bot/bot.lua"`
+    	ok=`tmux new-session -s $TMUX_SESSION -d "./bin/telegram-cli -s ./Run/Bot.lua"`
     	if [[ $ok ]]; then echo "New session tmux: ${TMUX_SESSION}"; else echo "Error while run tgcli"; fi
     	exit ;;
     attach)
