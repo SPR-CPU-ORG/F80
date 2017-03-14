@@ -31,7 +31,7 @@ Open ./Run/Bot.lua And Add Your ID in line 18 Like This :
 ```
 Also Add Realm, Bot and SupportID in ./Plugins/Main.lua in Line 1486 - 1488
 ```lua
-local RLM = -100 -- Realm ID to Send Charge Panel ! (You Can Set A Privet)
+local RLM = -100 -- Realm ID to Send Charge Panel ! (You Can Set A Private)
 local BOT = 0 -- Bot Id
 local SUP = -100 -- SupportID
 ```
