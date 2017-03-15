@@ -233,6 +233,50 @@ function dl_cb(arg, data)
   --vardump(data)
 end
 --
+function load_plugins()
+  PLS = redis:smembers('Bot:Enable:Plugins')
+  pl = {
+  "Main",
+  'Plugin'
+  }
+ 
+	
+for k, v in pairs(PLS) do
+    print("Loading "..v..' ...')
+
+    local ok, err =  pcall(function()
+      local t = loadfile("./Plugins/"..v..'.lua')()
+      plugins[v] = t
+    end)
+
+    if not ok then
+      print("Can't Load "..v.." Error Code = ")
+      print(tostring(io.popen("lua Plugins/"..v..".lua"):read('*all')))
+      elseif ok then
+      print(v..' Loaded Succses.')
+    end
+  end
+for k, v in pairs(pl) do
+    print("Loading "..v..' ...')
+
+    local ok, err =  pcall(function()
+      local t = loadfile("./Plugins/"..v..'.lua')()
+      plugins[v] = t
+    end)
+
+    if not ok then
+      print("Can't Load "..v.." Error Code = ")
+      print(tostring(io.popen("lua Plugins/"..v..".lua"):read('*all')))
+      elseif ok then
+      print(v..' Loaded Succses.')
+    end
+  end
+end
+
+  plugins = {}
+  load_plugins()
+
+
 function pre_process_msg(msg)
   for name, plugin in pairs(plugins) do
     if plugin.pre_process and msg then
@@ -278,51 +322,7 @@ function match_plugin(plugin, data, txt)
 end
 --
 --
-function load_plugins()
-  PLS = redis:smembers('Bot:Enable:Plugins')
-  pl = {
-  "Main",
-  'Plugin'
-  }
- 
-	
-for k, v in pairs(PLS) do
-    print("Loading "..v..' ...')
 
-    local ok, err =  pcall(function()
-      local t = loadfile("Plugins/"..v..'.lua')()
-      plugins[v] = t
-    end)
-
-    if not ok then
-      print("Can't Load "..v.." Error Code = ")
-      print(tostring(io.popen("lua Plugins/"..v..".lua"):read('*all')))
-      elseif ok then
-      print(v..' Loaded Succses.')
-    end
-  end
-	
-	
-	 for k, v in pairs(pl) do
-    print("Loading "..v..' ...')
-
-    local ok, err =  pcall(function()
-      local t = loadfile("Plugins/"..v..'.lua')()
-      plugins[v] = t
-    end)
-
-    if not ok then
-      print("Can't Load "..v.." Error Code = ")
-      print(tostring(io.popen("lua Plugins/"..v..".lua"):read('*all')))
-      elseif ok then
-      print(v..' Loaded Succses.')
-    end
-  end
-	
-end
-
-  plugins = {}
-  load_plugins()
 
 function tdcli_update_callback(data)                 
   pre_process_msg(data)
