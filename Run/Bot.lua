@@ -284,7 +284,9 @@ function load_plugins()
   "Main",
   'Plugin'
   }
-  for k, v in pairs(pl) do
+ 
+	
+for k, v in pairs(PLS) do
     print("Loading "..v..' ...')
 
     local ok, err =  pcall(function()
@@ -300,7 +302,8 @@ function load_plugins()
     end
   end
 	
-for k, v in pairs(PLS) do
+	
+	 for k, v in pairs(pl) do
     print("Loading "..v..' ...')
 
     local ok, err =  pcall(function()
