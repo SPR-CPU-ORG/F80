@@ -273,8 +273,7 @@ for k, v in pairs(pl) do
   end
 end
 
-  plugins = {}
-  load_plugins()
+
 
 
 function pre_process_msg(msg)
@@ -324,7 +323,12 @@ end
 --
 
 
-function tdcli_update_callback(data)                 
+function tdcli_update_callback(data) 
+	if not redis:get('Reloaded') then
+	  plugins = {}
+ 	 load_plugins()
+	end
+	
   pre_process_msg(data)
     if data.ID == 'UpdateMessageEdited' then
         getmsg(data.chat_id_, data.message_id_, edited_cb, nil)
