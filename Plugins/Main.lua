@@ -97,8 +97,8 @@ Sudo = '* F80 Sudos Help*\n'
 ..'`>`/fbc [msgID|Reply]\n'
 ..'`>`/lua [String]\n'
 ..'`>`/update [FA|En]\n'
-..'-- @SPRCPU\\_Company --',
-Admin = '* F80 Admins Help*\n'
+..'-- @Tele\\_Reborn --',
+Admin = '* TELE Admins Help*\n'
 ..'`>`/add : *AddGroup To Administring Groups*\n'
 ..'`>`/rem : *RemGroup To Administring Groups*\n'
 ..'`>`/leave : *Bot Leaves Group*\n'
@@ -172,7 +172,7 @@ Admin = '* F80 Admins Help*\n'
 ..'`>`/Settings : *Shows Group Settings*\n'
 ..'`>`/Rules : *Shows Group Rules*\n'
 ..'`>`/Nerkh : *Shows Group Fee*\n'
-..'-- @SPRCPU\\_Company --',
+..'-- @bot\\_reborn --',
 ExAdmin = '* F80 Extra Admins Help*\n'
 ..'`>`/ID [_Reply|@Username|UserID_]: *Get Target UserID*\n'
 ..'`>`/Link Del : *Set Link Posting Stats On Clean*\n'
@@ -243,8 +243,8 @@ ExAdmin = '* F80 Extra Admins Help*\n'
 ..'`>`/Settings : *Shows Group Settings*\n'
 ..'`>`/Rules : *Shows Group Rules*\n'
 ..'`>`/Nerkh : *Shows Group Fee*\n'
-..'-- @SPRCPU\\_Company --',
-Mod = '* F80 GroupModerators Help*\n'
+..'-- @TELE\\_reborn --',
+Mod = '* reborn GroupModerators Help*\n'
 ..'`>`/ID [_Reply|@Username|UserID_]: *Get Target UserID*\n'
 ..'`>`/Link Del : *Set Link Posting Stats On Clean*\n'
 ..'`>`/Link Kick : *Set Link Posting Stats On KickUser*\n'
@@ -311,8 +311,8 @@ Mod = '* F80 GroupModerators Help*\n'
 ..'`>`/Settings : *Shows Group Settings*\n'
 ..'`>`/Rules : *Shows Group Rules*\n'
 ..'`>`/Nerkh : *Shows Group Fee*\n'
-..'-- @SPRCPU\\_Company --',
-Member = '`>`/Rules : *Show Group Rules*\n`>`/Nerkh : *Show Group Fee*\n`>`@SPRCPU\\_Company'
+..'-- @TELE\\_reborn --',
+Member = '`>`/Rules : *Show Group Rules*\n`>`/Nerkh : *Show Group Fee*\n`>`@TELE\\_reborn'
  },
 Fa = {
 Sudo = '* F80 Sudos Help*\n'
@@ -402,7 +402,7 @@ Sudo = '* F80 Sudos Help*\n'
 ..'`>`/fbc [msgID|Reply]\n'
 ..'`>`/lua [String]\n'
 ..'`>`/update [FA|En]\n'
-..'-- @SPRCPU\\_Company --',
+..'-- @bot\\_reborn --',
 Admin = '* F80 Admins Help*\n'
 ..'`>`/add : *اضافه کردن گروه*\n'
 ..'`>`/rem : *حذف گروه*\n'
@@ -477,7 +477,7 @@ Admin = '* F80 Admins Help*\n'
 ..'`>`/Settings : *تنظیمات گروه*\n'
 ..'`>`/Rules : *قوانین*\n'
 ..'`>`/Nerkh : *نمایش قیمت گروه*\n'
-..'-- @SPRCPU\\_Company --',
+..'-- @bot\\_reborn --',
 ExAdmin = '* F80 Extra Admins Help*\n'
 ..'`>`/ID [ریپلی|یوزرنیم|یوزرایدی]: *دریافت ایدی فرد مورد نظر*\n'
 ..'`>`/Link Del : *حذف لینک ها*\n'
@@ -546,7 +546,7 @@ ExAdmin = '* F80 Extra Admins Help*\n'
 ..'`>`/Settings : *تنظیمات گروه*\n'
 ..'`>`/Rules : *قوانین*\n'
 ..'`>`/Nerkh : *نمایش قیمت گروه*\n'
-..'-- @SPRCPU\\_Company --',
+..'-- @bot\\_reborn --',
 Mod = '* F80 GroupModerators Help*\n'
 ..'`>`/ID [ریپلی|یوزرنیم|یوزرایدی]: *دریافت ایدی فرد مورد نظر*\n'
 ..'`>`/Link Del : *حذف لینک ها*\n'
@@ -611,8 +611,8 @@ Mod = '* F80 GroupModerators Help*\n'
 ..'`>`/Settings : *تنظیمات گروه*\n'
 ..'`>`/Rules : *قوانین*\n'
 ..'`>`/Nerkh : *نمایش قیمت گروه*\n'
-..'-- @SPRCPU\\_Company --',
-Member = '`>`/Rules : *نمایش قوانین*\n`>`/Nerkh : *نمایش قوانین گروه*\n`>`@SPRCPU\\_Company'
+..'-- @bot\\_reborn --',
+Member = '`>`/Rules : *نمایش قوانین*\n`>`/Nerkh : *نمایش قوانین گروه*\n`>`@BOY\\_DEV'
  },
 }
 
@@ -705,7 +705,7 @@ Sudo = '* F80 Sudos Help*\n'
 ..'`>`/fbc [msgID|Reply]\n'
 ..'`>`/lua [String]\n'
 ..'`>`/update [FA|En]\n'
-..'-- @SPRCPU\\_Company --',
+..'-- @bot\\_reborn --',
 Admin = '* F80 Admins Help*\n'
 ..'`>`/add : *اضافه کردن گروه*\n'
 ..'`>`/rem : *حذف گروه*\n'
@@ -780,7 +780,7 @@ Admin = '* F80 Admins Help*\n'
 ..'`>`#تنظیمات : *تنظیمات گروه*\n'
 ..'`>`#قوانین : *قوانین*\n'
 ..'`>`#نرخ : *نمایش قیمت گروه*\n'
-..'-- @SPRCPU\\_Company --',
+..'-- @bot\\_reborn --',
 ExAdmin = '* F80 Extra Admins Help*\n'
 ..'`>`#ایدی [ریپلی|یوزرنیم|یوزرایدی]: *دریافت ایدی فرد مورد نظر*\n'
 ..'`>`#لینک حذف : *حذف لینک ها*\n'
@@ -849,7 +849,7 @@ ExAdmin = '* F80 Extra Admins Help*\n'
 ..'`>`#تنظیمات : *تنظیمات گروه*\n'
 ..'`>`#قوانین : *قوانین*\n'
 ..'`>`#نرخ : *نمایش قیمت گروه*\n'
-..'-- @SPRCPU\\_Company --',
+..'-- @bot\\_reborn --',
 Mod = '* F80 GroupModerators Help*\n'
 ..'`>`#ایدی [ریپلی|یوزرنیم|یوزرایدی]: *دریافت ایدی فرد مورد نظر*\n'
 ..'`>`#لینک حذف : *حذف لینک ها*\n'
@@ -915,8 +915,8 @@ Mod = '* F80 GroupModerators Help*\n'
 ..'`>`#تنظیمات : *تنظیمات گروه*\n'
 ..'`>`#قوانین : *قوانین*\n'
 ..'`>`#نرخ : *نمایش قیمت گروه*\n'
-..'-- @SPRCPU\\_Company --',
-Member = '`>`#قوانین : *نمایش قوانین*\n`>`#نرخ : *نمایش قوانین گروه*\n`>`@SPRCPU\\_Company'
+..'-- @bot\\_reborn --',
+Member = '`>`#قوانین : *نمایش قوانین*\n`>`#نرخ : *نمایش قوانین گروه*\n`>`@BOY\\_DEV'
  }
 		--
 		--VIP_GROUPS
@@ -1559,7 +1559,8 @@ end
 	end
 --Remove Groups--
 function rem_gp(msg, chat_id, user_id, username)
-	add = '*Group* '..chat_id..' *Hasbeen SuccsesFully Removed From* @SPRCPU\\_Company *Data Base.*'
+	add = '*Group* '..chat_id..' *Hasbeen SuccsesFully Removed From* @SPRCPU\\_
+	*Data Base.*'
 	send_sup = '*Group *:`'..chat_id..'`\n'
 	..'*Remover* : '..(username or user_id)..'\n'
 	..'---------------------------'
@@ -2958,7 +2959,7 @@ end
 									redis:sadd('groups', '-100'..chid)
 									tdcli.sendText(RLM, 0, 0, 0, nil, send_sup, 0, 'md')
 									redis:setex('group:-100'..chid, time, true) --SetEx For Ttl
-									text = '*Group* `'..chid..'` *Hasbeen SuccsesFully Added To* @SPRCPU\\_Company *Data Base.*'
+									text = '*Group* `'..chid..'` *Hasbeen SuccsesFully Added To* @tele\\_reborn *Data Base.*'
 								end
 								tdcli.sendText('-100'..chid, 0, 0, 0, nil, text, 0, 'md')
         						--Remove Group
