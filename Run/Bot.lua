@@ -234,13 +234,14 @@ function dl_cb(arg, data)
 end
 --
 print('SprCpu Team')
+
 function load_plugins()
   PLS = redis:smembers('Bot:Enable:Plugins')
   pl = {
   "Main",
   'Plugin'
   }
- 
+ print('loading Plugins')
 	
 for k, v in pairs(PLS) do
     print("Loading "..v..' ...')
@@ -328,11 +329,6 @@ end
 
 
 function tdcli_update_callback(data) 
-	if not redis:get('Reloaded') then
-	  plugins = {}
- 	 load_plugins()
-	end
-	
   pre_process_msg(data)
     if data.ID == 'UpdateMessageEdited' then
         getmsg(data.chat_id_, data.message_id_, edited_cb, nil)
