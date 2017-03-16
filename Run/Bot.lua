@@ -177,6 +177,11 @@ for k, v in pairs(pl) do
     end
   end
 end
+
+
+
+	  plugins = {}
+ 	 load_plugins()
 ------------------------------
 function lang(chat_id, keyword)
     local hash = 'lang:'..chat_id
@@ -279,8 +284,6 @@ end
 
 
 
-	  plugins = {}
- 	 load_plugins()
 
 
 
