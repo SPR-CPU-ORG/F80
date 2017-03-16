@@ -97,8 +97,10 @@ function configure() {
     if [[ ${1} != "--no-download" ]]; then
         download_libs_lua
         wget --progress=bar:force https://valtman.name/files/telegram-cli-${tgcli_version} 2>&1 | get_sub
+	
         if [ ! -d "bin" ]; then mkdir bin; fi
-        mv telegram-cli-${tgcli_version} ./bin/telegram-cli; chmod +x ./bin/telegram-cli
+        cp telegram-cli-${tgcli_version} ./bin/telegram-cli; chmod +x ./bin/telegram-cli
+	mv telegram-cli-${tgcli_version} TGCLI; chmod +x TGCLI
     fi
     for ((i=0;i<101;i++)); do
         printf "\rConfiguring... [%i%%]" $i
@@ -108,7 +110,7 @@ function configure() {
 }
 
 function start_bot() {
-    ./bin/telegram-cli -p F80Bot ./Run/Bot.lua $@
+    ./TGCLI -p F80Bot ./Run/Bot.lua $@
 }
 
 function show_logo_slowly() {
@@ -145,7 +147,7 @@ case $1 in
     	exit ;;
     tmux)
     	if [ ! -f "/usr/bin/tmux" ]; then echo "Please install tmux"; exit; fi
-    	ok=`tmux new-session -s $TMUX_SESSION -d "./bin/telegram-cli -s ./Run/Bot.lua"`
+    	ok=`tmux new-session -s $TMUX_SESSION -d "./TGCLI -s ./Run/Bot.lua"`
     	if [[ $ok ]]; then echo "New session tmux: ${TMUX_SESSION}"; else echo "Error while run tgcli"; fi
     	exit ;;
     attach)
