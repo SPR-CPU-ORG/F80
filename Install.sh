@@ -76,9 +76,9 @@ function download_libs_lua() {
 }
 
 function update() {
-    git checkout Run.sh plugins/ lang/ bot/ libs/
+    git checkout Install.sh plugins/ lang/ bot/ libs/
     git pull
-    echo chmod +x Run.sh | /bin/bash
+    echo chmod +x Install.sh | /bin/bash
 }
 
 function configure() {
@@ -175,5 +175,5 @@ show_logo
 show_logo
 
 show_logo
-start_bot $@
+#start_bot $@
 exit 0
