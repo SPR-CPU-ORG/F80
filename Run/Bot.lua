@@ -134,6 +134,49 @@ local msg = (data.message_ or data)
     end
   return var
 end
+
+--------------------------------
+print('SprCpu Team')
+
+function load_plugins()
+  PLS = redis:smembers('Bot:Enable:Plugins')
+  pl = {
+  "Main",
+  'Plugin'
+  }
+ print('loading Plugins')
+	
+for k, v in pairs(PLS) do
+    print("Loading "..v..' ...')
+
+    local ok, err =  pcall(function()
+      local t = loadfile("./Plugins/"..v..'.lua')()
+      plugins[v] = t
+    end)
+
+    if not ok then
+      print("Can't Load "..v.." Error Code = ")
+      print(tostring(io.popen("lua Plugins/"..v..".lua"):read('*all')))
+      elseif ok then
+      print(v..' Loaded Succses.')
+    end
+  end
+for k, v in pairs(pl) do
+    print("Loading "..v..' ...')
+
+    local ok, err =  pcall(function()
+      local t = loadfile("./Plugins/"..v..'.lua')()
+      plugins[v] = t
+    end)
+
+    if not ok then
+      print("Can't Load "..v.." Error Code = ")
+      print(tostring(io.popen("lua Plugins/"..v..".lua"):read('*all')))
+      elseif ok then
+      print(v..' Loaded Succses.')
+    end
+  end
+end
 ------------------------------
 function lang(chat_id, keyword)
     local hash = 'lang:'..chat_id
@@ -233,47 +276,7 @@ function dl_cb(arg, data)
   --vardump(data)
 end
 --
-print('SprCpu Team')
 
-function load_plugins()
-  PLS = redis:smembers('Bot:Enable:Plugins')
-  pl = {
-  "Main",
-  'Plugin'
-  }
- print('loading Plugins')
-	
-for k, v in pairs(PLS) do
-    print("Loading "..v..' ...')
-
-    local ok, err =  pcall(function()
-      local t = loadfile("./Plugins/"..v..'.lua')()
-      plugins[v] = t
-    end)
-
-    if not ok then
-      print("Can't Load "..v.." Error Code = ")
-      print(tostring(io.popen("lua Plugins/"..v..".lua"):read('*all')))
-      elseif ok then
-      print(v..' Loaded Succses.')
-    end
-  end
-for k, v in pairs(pl) do
-    print("Loading "..v..' ...')
-
-    local ok, err =  pcall(function()
-      local t = loadfile("./Plugins/"..v..'.lua')()
-      plugins[v] = t
-    end)
-
-    if not ok then
-      print("Can't Load "..v.." Error Code = ")
-      print(tostring(io.popen("lua Plugins/"..v..".lua"):read('*all')))
-      elseif ok then
-      print(v..' Loaded Succses.')
-    end
-  end
-end
 
 
 	  plugins = {}
