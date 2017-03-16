@@ -233,6 +233,7 @@ function dl_cb(arg, data)
   --vardump(data)
 end
 --
+print('SprCpu Team')
 function load_plugins()
   PLS = redis:smembers('Bot:Enable:Plugins')
   pl = {
@@ -273,6 +274,9 @@ for k, v in pairs(pl) do
   end
 end
 
+
+	  plugins = {}
+ 	 load_plugins()
 
 
 
