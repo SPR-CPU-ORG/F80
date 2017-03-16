@@ -15,7 +15,8 @@ cd $HOME
 git clone https://github.com/SPR-CPU-ORG/F80.git
 cd F80
 chmod +x Run.sh
-./Run.sh install
+chmod +x Install.sh
+./Install.sh install
 ./Run.sh 
 # Enter a phone number & confirmation code.
 ```
