@@ -1,7 +1,6 @@
 ------------ Ranks
 redis_server = require('redis')
 redis = redis_server.connect('127.0.0.1', 6379)
-redis:auth('sprcpu1234')
 	local R = {}
 	--\\Is Sudo (Message or UserID)
 	local function is_Sudo(data)
