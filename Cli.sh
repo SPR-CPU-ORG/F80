@@ -43,13 +43,13 @@ install_rocks() {
   fi
 
 }
-
+chmod +x ./Bot/Telegram-cli/Telegram-Cli
 if [ "$1" = "install" ]; then
   install_luarocks
   install_rocks
 else
   while true; do
-    ./Bot/Telegram-cli/Telegram-Cli -p Moshtari -s ./Bot/Bot.lua
+    ./Bot/Telegram-cli/Telegram-Cli -p F80Bot -s ./Bot/Bot.lua
     sleep 5s
   done
 fi
