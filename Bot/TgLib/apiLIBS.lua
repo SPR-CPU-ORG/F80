@@ -1,5 +1,5 @@
 --
-
+_Config = dofile('./Bot/Config.lua')
 local URL = require 'socket.url'
 local JSON = require 'dkjson'
 local URL = require "socket.url"
