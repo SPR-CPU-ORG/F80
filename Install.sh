@@ -77,7 +77,7 @@ function download_libs_lua() {
 }
 
 function update() {
-    git checkout Install.sh plugins/ lang/ bot/ libs/
+    git checkout Install.sh ApiPlugins/ Bot/ Plugins/
     git pull
     echo chmod +x Install.sh | /bin/bash
 }
