@@ -1,7 +1,6 @@
 --Lang
 redis_server = require('redis')
 redis = redis_server.connect('127.0.0.1', 6379)
-redis:auth('sprcpu1234')
 
  function set_text2(lang, keyword, text) 
      local hash = 'lang:'..lang..':'..keyword 
