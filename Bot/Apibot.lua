@@ -13,7 +13,7 @@ local params = {
   port = tonumber(os.getenv('REDIS_PORT') or 6379)
 }
 local database = 0
-local password = 'sprcpu1234'
+local password = nil
 -- Overwrite HGETALL
 Redis.commands.hgetall = Redis.command('hgetall', {
   response = function(reply, command, ...)
