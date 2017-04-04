@@ -1,7 +1,6 @@
 -- Message Checking ....
 redis_server = require('redis')
 redis = redis_server.connect('127.0.0.1', 6379)
-redis:auth('sprcpu1234')
 --Checking functions ;)
 local C = {}
 function DL(arg, data)
