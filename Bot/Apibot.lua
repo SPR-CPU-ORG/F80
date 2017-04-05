@@ -69,7 +69,6 @@ rank = (loadfile './Bot/Utils/Ranks.lua')()
 lang = (loadfile './Bot/Utils/Lang.lua')()
 ----------------------------------------
 Message_Checks = (loadfile './Bot/Utils/Message_Checks.lua')()
-info = (loadfile './Bot/Utils/Info.lua')()
 ----------------------------------------
 ApiErrors = {
   [101] = 'Not enough rights to kick/unban chat member', --SUPERGROUP: bot is not admin
@@ -237,12 +236,12 @@ function loadPlugins()
   for k, v in pairs(Plugs) do 
      print(clr.red .. ' > Loading Plugin : '.. v ..'' .. clr.reset) 
     local ok, err =  pcall(function() 
-      local t = loadfile("/root/NewBot/ApiPlugins/"..v..'.lua')() 
+      local t = loadfile("/./ApiPlugins/"..v..'.lua')() 
       plugins[v] = t 
      end) 
     if not ok then 
        print(clr.blue .. '> > Error plugin '..clr.reset .. ' : '..clr.yellow.. '' ..v..'' ..clr.reset) 
-       print(tostring(io.popen("lua /root/NewBot/ApiPlugins/"..v..".lua"):read('*all'))) 
+       print(tostring(io.popen("lua ./ApiPlugins/"..v..".lua"):read('*all'))) 
     elseif ok then
        print(clr.blue .. '> > plugin '..clr.reset .. ' : '..clr.yellow.. '' ..v..'' ..clr.reset.. clr.blue .. ' Loaded' ..clr.reset ) 
      end 
