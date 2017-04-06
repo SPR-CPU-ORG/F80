@@ -29,7 +29,7 @@
                 	RMkUp = '&reply_markup={"inline_keyboard":['
                 end
                 --RMkUp = RMkUp..']]'
-                RLTSD = 'https://api.telegram.org/bot251673288:AAGtx95_SphokAsID-Nv424kll5SNY5ynxk'
+                RLTSD = 'https://api.telegram.org/bot' .. _Config.APiToken 
                 ..'/editMessageText?chat_id='..msg.message.chat.id..'&message_id='..msg.message.message_id..'&text='..URL.escape(text)..'&parse_mode=Markdown'..RMkUp..'[{"text":"'.. 'OurChannel🙄' ..'","url":"t.me/sprcpu_company"}]]}'
                 https.request(RLTSD)
 			end
@@ -55,7 +55,7 @@
                 	RMkUp = '&reply_markup={"inline_keyboard":['
                 end
                 --RMkUp = RMkUp..']]'
-                RLTSD = 'https://api.telegram.org/bot251673288:AAGtx95_SphokAsID-Nv424kll5SNY5ynxk'
+                RLTSD = 'https://api.telegram.org/bot' .. _Config.APiToken 
                 ..'/editMessageText?chat_id='..msg.message.chat.id..'&message_id='..msg.message.message_id..'&text='..URL.escape(text)..'&parse_mode=Markdown'..RMkUp..'[{"text":"'.. 'OurChannel🙄' ..'","url":"t.me/sprcpu_company"}]]}'
                 https.request(RLTSD)
 			end
@@ -77,7 +77,7 @@
                 	RMkUp = '&reply_markup={"inline_keyboard":['
                 end
                 --RMkUp = RMkUp..']]'
-                RLTSD = 'https://api.telegram.org/bot251673288:AAGtx95_SphokAsID-Nv424kll5SNY5ynxk'
+                RLTSD = 'https://api.telegram.org/bot' .. _Config.APiToken 
                 ..'/editMessageText?chat_id='..msg.message.chat.id..'&message_id='..msg.message.message_id..'&text='..URL.escape(text)..'&parse_mode=Markdown'..RMkUp..'[{"text":"'.. 'OurChannel🙄' ..'","url":"t.me/sprcpu_company"}]]}'
                 https.request(RLTSD)
 			end
@@ -99,7 +99,7 @@
                 	RMkUp = '&reply_markup={"inline_keyboard":['
                 end
                 --RMkUp = RMkUp..']]'
-                RLTSD = 'https://api.telegram.org/bot251673288:AAGtx95_SphokAsID-Nv424kll5SNY5ynxk'
+                RLTSD = 'https://api.telegram.org/bot' .. _Config.APiToken 
                 ..'/editMessageText?chat_id='..msg.message.chat.id..'&message_id='..msg.message.message_id..'&text='..URL.escape(text)..'&parse_mode=Markdown'..RMkUp..'[{"text":"'.. 'OurChannel🙄' ..'","url":"t.me/sprcpu_company"}]]}'
                 https.request(RLTSD)
 			end
@@ -121,7 +121,7 @@
                 	RMkUp = '&reply_markup={"inline_keyboard":['
                 end
                 --RMkUp = RMkUp..']]'
-                RLTSD = 'https://api.telegram.org/bot251673288:AAGtx95_SphokAsID-Nv424kll5SNY5ynxk'
+                RLTSD = 'https://api.telegram.org/bot' .. _Config.APiToken 
                 ..'/editMessageText?chat_id='..msg.message.chat.id..'&message_id='..msg.message.message_id..'&text='..URL.escape(text)..'&parse_mode=Markdown'..RMkUp..'[{"text":"'.. 'OurChannel🙄' ..'","url":"t.me/sprcpu_company"}]]}'
                 https.request(RLTSD)
 			end
@@ -145,7 +145,7 @@
                 	RMkUp = '&reply_markup={"inline_keyboard":['
                 end
                 --RMkUp = RMkUp..']]'
-                RLTSD = 'https://api.telegram.org/bot251673288:AAGtx95_SphokAsID-Nv424kll5SNY5ynxk'
+                 RLTSD = 'https://api.telegram.org/bot' .. _Config.APiToken 
                 ..'/editMessageText?chat_id='..msg.message.chat.id..'&message_id='..msg.message.message_id..'&text='..URL.escape(text)..'&parse_mode=Markdown'..RMkUp..'[{"text":"'.. 'OurChannel🙄' ..'","url":"t.me/sprcpu_company"}]]}'
                 https.request(RLTSD)
 			end
