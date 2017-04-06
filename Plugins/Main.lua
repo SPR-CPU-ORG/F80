@@ -448,13 +448,7 @@ local function ID_(extra, results)
         ..'> '..lang.Lang(chat_id, 'ID:2')..' : '..user_id..'\n'
         ..'> '..lang.Lang(chat_id, 'ID:3')..' : @'..(results.user_.username_ or 'NoUserName')..'\n'
         ..'> '..lang.Lang(chat_id, 'ID:4')..' : '..results.user_.first_name_
-        file = '/root/.telegram-cli/' .. 'Reloaded' .. '/data/profile_photo/'.. results.user_.profile_photo_.id_ ..'.jpg'
-        io.open(file, 'r')
-        if file == nil then
-        cli.sendPhoto(chat_id, msg_id, 0, 1, nil, '/root/.telegram-cli/' .. ('Reloaded') .. '/data/profile_photo/'.. results.user_.profile_photo_.id_ ..'.jpg', text, dl_cb, nil)
-        else
-        cli.sendPhoto(chat_id, msg_id, 0, 1, nil, '/root/.telegram-cli/' .. ('Moshtari') .. '/data/profile_photo/'.. results.user_.profile_photo_.id_ ..'.jpg', text, dl_cb, nil)
-      	end
+        cli.sendPhoto(chat_id, msg_id, 0, 1, nil, results.user_.profile_photo_.big_.file_path_, text, dl_cb, nil)
       end
     end
     cli.getUserFull(user_id, ID_, {msg=msg,chat_id=chat_id,msg_id=msg_id})
@@ -707,13 +701,7 @@ local function ID_(extra, results)
       ..'> '..lang.Lang(chat_id, 'ID:2')..' : '..user_id..'\n'
       ..'> '..lang.Lang(chat_id, 'ID:3')..' : @'..(msg.user_.username_ or 'NoUserName')..'\n'
       ..'> '..lang.Lang(chat_id, 'ID:4')..' : '..msg.user_.first_name_
-		file = '/root/.telegram-cli/' .. 'Reloaded' .. '/data/profile_photo/'.. results.user_.profile_photo_.id_ ..'.jpg'
-        io.open(file, 'r')
-        if file == nil then
-        cli.sendPhoto(chat_id, msg_id, 0, 1, nil, '/root/.telegram-cli/' .. ('Reloaded') .. '/data/profile_photo/'.. results.user_.profile_photo_.id_ ..'.jpg', text, dl_cb, nil)
-        else
-        cli.sendPhoto(chat_id, msg_id, 0, 1, nil, '/root/.telegram-cli/' .. ('Moshtari') .. '/data/profile_photo/'.. results.user_.profile_photo_.id_ ..'.jpg', text, dl_cb, nil)
-      	end
+		cli.sendPhoto(chat_id, msg_id, 0, 1, nil, msg.user_.profile_photo_.big_.file_path_, text, dl_cb, nil)
        end
     else
       print('False CMD Used In UserID CallBack ....')
@@ -969,13 +957,7 @@ local function ID_(extra, results)
         ..'> '..lang.Lang(chat_id, 'ID:2')..' : '..user_id..'\n'
         ..'> '..lang.Lang(chat_id, 'ID:3')..' : @'..(results.user_.username_ or 'NoUserName')..'\n'
         ..'> '..lang.Lang(chat_id, 'ID:4')..' : '..results.user_.first_name_
-file = '/root/.telegram-cli/' .. 'Reloaded' .. '/data/profile_photo/'.. results.user_.profile_photo_.id_ ..'.jpg'
-        io.open(file, 'r')
-        if file == nil then
-        cli.sendPhoto(chat_id, msg_id, 0, 1, nil, '/root/.telegram-cli/' .. ('Reloaded') .. '/data/profile_photo/'.. results.user_.profile_photo_.id_ ..'.jpg', text, dl_cb, nil)
-        else
-        cli.sendPhoto(chat_id, msg_id, 0, 1, nil, '/root/.telegram-cli/' .. ('Moshtari') .. '/data/profile_photo/'.. results.user_.profile_photo_.id_ ..'.jpg', text, dl_cb, nil)
-      	end
+		cli.sendPhoto(chat_id, msg_id, 0, 1, nil, results.user_.profile_photo_.big_.file_path_, text, dl_cb, nil)
       end
     end
     cli.getUserFull(user_id, ID_s, {msg=msg,chat_id=chat_id,msg_id=msg_id})
@@ -1157,13 +1139,7 @@ Click* [Here](t.me/Question_Robot?start=] ].. chat_id ..[[ChargeReq) *To Charge 
       ..'> '..lang.Lang(chat_id, 'ID:2')..' : '..user_id..'\n'
       ..'> '..lang.Lang(chat_id, 'ID:3')..' : @'..(msg.user_.username_ or 'NoUserName')..'\n'
       ..'> '..lang.Lang(chat_id, 'ID:4')..' : '..msg.user_.name_
-      file = '/root/.telegram-cli/' .. 'Reloaded' .. '/data/profile_photo/'.. msg.user_.profile_photo_.id_ ..'.jpg'
-        io.open(file, 'r')
-        if file == nil then
-        cli.sendPhoto(chat_id, msg_id, 0, 1, nil, '/root/.telegram-cli/' .. ('Reloaded') .. '/data/profile_photo/'.. msg.user_.profile_photo_.id_ ..'.jpg', text, dl_cb, nil)
-        else
-        cli.sendPhoto(chat_id, msg_id, 0, 1, nil, '/root/.telegram-cli/' .. ('Moshtari') .. '/data/profile_photo/'.. msg.user_.profile_photo_.id_ ..'.jpg', text, dl_cb, nil)
-      	end
+      cli.sendPhoto(chat_id, msg_id, 0, 1, nil, msg.user_.profile_photo_.big_.file_path_, text, dl_cb, nil)
 
     end
    end 
