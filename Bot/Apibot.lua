@@ -236,7 +236,7 @@ function loadPlugins()
   for k, v in pairs(Plugs) do 
      print(clr.red .. ' > Loading Plugin : '.. v ..'' .. clr.reset) 
     local ok, err =  pcall(function() 
-      local t = loadfile("/./ApiPlugins/"..v..'.lua')() 
+      local t = loadfile("./ApiPlugins/"..v..'.lua')() 
       plugins[v] = t 
      end) 
     if not ok then 
